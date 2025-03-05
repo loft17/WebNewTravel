@@ -21,6 +21,15 @@
 
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
+                            <span>Administración</span></a>
+                        <ul class="collapse">
+                            <li><a href="/admin/adm/users.php">Usuarios</a></li>
+                            <li><a href="/admin/adm/portalconf.php">Portal</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
                             <span>Utilidades</span></a>
                         <ul class="collapse">
                             <li><a href="/admin/utils/emojis.php">Emojis</a></li>

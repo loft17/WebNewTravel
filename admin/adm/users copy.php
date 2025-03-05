@@ -1,7 +1,5 @@
 <?php
 include '../includes/templates/head.php';  // Asegúrate de que head.php tenga los elementos <head> y <meta> adecuados.
-
-
 ?>
 
 
@@ -32,7 +30,7 @@ include '../includes/templates/head.php';  // Asegúrate de que head.php tenga l
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <div class="header-title">No gutters</div>
+                                <div class="header-title">Usuario</div>
                                 
                                 AQUI VA EL CODIGO
                             </div>
