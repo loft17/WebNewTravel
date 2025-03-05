@@ -20,6 +20,8 @@ include '../includes/templates/head.php';  // Asegúrate de que head.php tenga l
         <?php include '../includes/templates/sidebar.php'; ?>
         <?php include '../includes/templates/user-profile.php'; ?>
 
+
+
         <!-- main content area start -->
         <div class="main-content">
             <div class="main-content-inner">
@@ -58,25 +60,30 @@ include '../includes/templates/head.php';  // Asegúrate de que head.php tenga l
                                                                 <td><?php echo htmlspecialchars($user['id']); ?></td>
                                                                 <td><?php echo htmlspecialchars($user['name']); ?></td>
                                                                 <td><?php echo htmlspecialchars($user['email']); ?></td>
-                                                                <td></td>
                                                                 <td>
                                                                     <?php 
-                                                                    if ($user['rol'] === 'admin') {
-                                                                        echo '<span class="status-p bg-danger">' . htmlspecialchars($user['rol']) . '</span>';
-                                                                    } elseif ($user['rol'] === 'usuario') {
-                                                                        echo '<span class="status-p bg-success">' . htmlspecialchars($user['rol']) . '</span>';
-                                                                    } else {
-                                                                        echo '<span class="status-p bg-warning">' . htmlspecialchars($user['rol']) . '</span>';
-                                                                    }
+                                                                        if ($user['rol'] === 'admin') {
+                                                                            echo '<span class="status-p bg-danger">' . htmlspecialchars($user['rol']) . '</span>';
+                                                                        } elseif ($user['rol'] === 'usuario') {
+                                                                            echo '<span class="status-p bg-success">' . htmlspecialchars($user['rol']) . '</span>';
+                                                                        } else {
+                                                                            echo '<span class="status-p bg-warning">' . htmlspecialchars($user['rol']) . '</span>';
+                                                                        }
                                                                     ?>
                                                                 </td>
+
                                                                 <td><?php echo $user['active'] ? 'Sí' : 'No'; ?></td>
                                                                 <td>
                                                                     <ul class="d-flex justify-content-center">
                                                                         <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                                        <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
+                                                                        <li class="mr-3">
+                                                                            <a href="../includes/functions/delete-user.php?id=<?php echo $user['id']; ?>" class="text-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">
+                                                                                <i class="ti-trash"></i>
+                                                                            </a>
+                                                                        </li>
                                                                     </ul>
                                                                 </td>
+
                                                             </tr>
                                                         <?php endforeach; ?>
                                                     <?php else: ?>
@@ -91,15 +98,24 @@ include '../includes/templates/head.php';  // Asegúrate de que head.php tenga l
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- No gutters end -->
                 </div>
             </div>
+
+            <!-- mensaje de usuario -->
+            <?php if (isset($_GET['message'])): ?>
+                <div class="alert alert-success"><?php echo $_GET['message']; ?></div>
+            <?php endif; ?>
+            
         </div>
         <!-- main content area end -->
+
+
     </div>
     <!-- page container area end -->
+
+
 
     <?php include '../includes/templates/footer.php'; ?>
     <?php include '../includes/libraries/scripts.php'; ?>
