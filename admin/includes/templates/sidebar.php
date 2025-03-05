@@ -25,6 +25,7 @@
                         <ul class="collapse">
                             <li><a href="/admin/utils/emojis.php">Emojis</a></li>
                             <li><a href="/admin/utils/export_json.php">Export JSON</a></li>
+                            <li><a href="/admin/utils/export_sql.php">Export SQL</a></li>
                         </ul>
                     </li>
                     

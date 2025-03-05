@@ -1,15 +1,17 @@
 <?php
-// Asegúrate de usar include_once para evitar duplicados
-include_once '../../config.php';  // Incluir config.php una sola vez
-include_once '../includes/functions/export-json.php';  // Incluir el archivo de funciones
+include_once '../../config.php';  // Incluir la conexión a la base de datos
+include_once '../includes/functions/export-sql.php';  // Incluir las funciones de exportación
 include '../includes/templates/head.php';
 
-if (isset($_POST['exportar_json'])) {
-    // Llamamos a la función que está en export-json.php para exportar los datos
-    exportar_a_json($conn);  // Llamamos a la función exportar_a_json
+// Establecer la conexión a la base de datos
+$conn = conectar_bd();  // Crear la conexión a la base de datos
+
+// Verificar si el formulario fue enviado
+if (isset($_POST['exportar_sql'])) {
+    // Llamamos a la función que está en export-sql.php para exportar los datos
+    exportar_a_sql($conn);  // Pasamos la conexión como argumento a la función
 }
 ?>
-
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -25,7 +27,6 @@ if (isset($_POST['exportar_json'])) {
         <?php include '../includes/templates/sidebar.php'; ?>
         <?php include '../includes/templates/user-profile.php'; ?>
 
-
         <!-- main content area start -->
         <div class="main-content">
             
@@ -36,11 +37,11 @@ if (isset($_POST['exportar_json'])) {
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <div class="header-title">Exportar JSON</div>
-
+                                <div class="header-title">Exportar a SQL</div>
+                                
                                 <!-- Aquí va el botón para exportar los datos -->
                                 <form method="POST">
-                                    <button type="submit" name="exportar_json" class="btn btn-primary">EXPORTAR</button>
+                                    <button type="submit" name="exportar_sql" class="btn btn-primary">EXPORTAR</button>
                                 </form>
 
                             </div>
