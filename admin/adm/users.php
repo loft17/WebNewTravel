@@ -75,7 +75,11 @@ include '../includes/templates/head.php';  // Asegúrate de que head.php tenga l
                                                                 <td><?php echo $user['active'] ? 'Sí' : 'No'; ?></td>
                                                                 <td>
                                                                     <ul class="d-flex justify-content-center">
-                                                                        <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                                        <li class="mr-3">
+                                                                            <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="text-secondary">
+                                                                                <i class="fa fa-edit"></i>
+                                                                            </a>
+                                                                        </li>
                                                                         <li class="mr-3">
                                                                             <a href="../includes/functions/delete-user.php?id=<?php echo $user['id']; ?>" class="text-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">
                                                                                 <i class="ti-trash"></i>
@@ -83,7 +87,6 @@ include '../includes/templates/head.php';  // Asegúrate de que head.php tenga l
                                                                         </li>
                                                                     </ul>
                                                                 </td>
-
                                                             </tr>
                                                         <?php endforeach; ?>
                                                     <?php else: ?>
