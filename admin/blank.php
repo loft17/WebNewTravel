@@ -13,19 +13,31 @@ include 'includes/templates/head.php';  // Asegúrate de que head.php tenga los 
         <div class="loader"></div>
     </div>
     <!-- preloader area end -->
-    <!-- page container area start -->
-    <div class="page-container">
-        <?php include 'includes/templates/sidebar.php'; ?>
-        <?php include 'includes/templates/user-profile.php'; ?>
-
-
-        <!-- main content area start -->
-        <div class="main-content">
+    
+    <!-- main content area start -->
+    <div class="main-content">
             
-            EN BLANCO
-            
-        </div>
-        <!-- main content area end -->
+            <!-- page title area end -->
+                <div class="main-content-inner">
+                    <div class="row">
+                        <!-- No gutters start -->
+                        <div class="col-12 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="header-title">No gutters</div>
+                                    
+                                    AQUI VA EL CODIGO
+                                </div>
+                            </div>
+                        </div>
+                        <!-- No gutters end -->
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <!-- main content area end -->
 
     </div>
     <!-- page container area end -->

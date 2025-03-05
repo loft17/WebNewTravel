@@ -1,9 +1,9 @@
 <?php
-include 'includes/templates/head.php';  // Asegúrate de que head.php tenga los elementos <head> y <meta> adecuados.
-include 'includes/functions/emojis.php';
+include '../includes/templates/head.php';
+include '../includes/functions/emojis.php';
 
 // Leer el archivo JSON usando la función
-$jsonFile = 'assets/json/emojis.json';
+$jsonFile = '../assets/json/emojis.json';
 $categorias = obtenerCategoriasEmojis($jsonFile);
 ?>
 
@@ -19,8 +19,8 @@ $categorias = obtenerCategoriasEmojis($jsonFile);
     <!-- preloader area end -->
     <!-- page container area start -->
     <div class="page-container">
-        <?php include 'includes/templates/sidebar.php'; ?>
-        <?php include 'includes/templates/user-profile.php'; ?>
+        <?php include '../includes/templates/sidebar.php'; ?>
+        <?php include '../includes/templates/user-profile.php'; ?>
 
         <div class="main-content-inner">
                 <div class="row">
@@ -60,11 +60,11 @@ $categorias = obtenerCategoriasEmojis($jsonFile);
 
     </div>
     <!-- page container area end -->
-    <?php include 'includes/templates/footer.php'; ?>
+    <?php include '../includes/templates/footer.php'; ?>
     
     
-    <?php include 'includes/libraries/scripts.php'; ?>
-    <script src="assets/js/copy-emojis.js"></script>
+    <?php include '../includes/libraries/scripts.php'; ?>
+    <script src="../assets/js/copy-emojis.js"></script>
 </body>
 
 </html>

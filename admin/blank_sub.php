@@ -1,17 +1,13 @@
 <?php
 include '../includes/templates/head.php';  // Asegúrate de que head.php tenga los elementos <head> y <meta> adecuados.
-// Asegúrate de usar include_once para evitar duplicados
-include_once '../../config.php';  // Incluir config.php una sola vez
-include_once '../includes/functions/export-json.php';  // Incluir el archivo de funciones
 
-if (isset($_POST['exportar_json'])) {
-    // Llamamos a la función que está en export-json.php para exportar los datos
-    exportar_a_json($conn);  // Llamamos a la función exportar_a_json
-}
+
 ?>
+
 
 <!doctype html>
 <html class="no-js" lang="en">
+
 
 <body>
 
@@ -36,13 +32,9 @@ if (isset($_POST['exportar_json'])) {
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <div class="header-title">Exportar todas las tablas</div>
+                                <div class="header-title">No gutters</div>
                                 
-                                <!-- Aquí va el botón para exportar los datos -->
-                                <form method="POST">
-                                    <button type="submit" name="exportar_json" class="btn btn-primary">Exportar todas las tablas a JSON</button>
-                                </form>
-
+                                AQUI VA EL CODIGO
                             </div>
                         </div>
                     </div>
