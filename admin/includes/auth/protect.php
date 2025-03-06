@@ -13,15 +13,3 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
 
 // Si el usuario es admin, continúa con el código de la página
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Página Administrativa</title>
-</head>
-<body>
-    <h1>Bienvenido, Administrador</h1>
-    <!-- Contenido específico para admins -->
-</body>
-</html>

@@ -38,7 +38,7 @@ if (isset($_POST['exportar_sql'])) {
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <div class="header-title">Exportar a SQL</div>
+                                <div class="header-title">Exportar SQL</div>
                                 
                                 <!-- Aquí va el botón para exportar los datos -->
                                 <form method="POST">
