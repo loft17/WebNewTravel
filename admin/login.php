@@ -22,10 +22,21 @@ include 'includes/templates/head.php';  // Asegúrate de que head.php tenga los 
                     <!-- Campo oculto para el token CSRF -->
                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
+
+
                     <div class="login-form-head">
                         <h4>Acceder</h4>
                         <p>Hola, Inicia sesión y empieza a gestionar tu viaje.</p>
                     </div>
+
+                    <!-- Mostrar mensaje de error si existe -->
+                    <?php
+                    if (isset($_SESSION['login_error'])) {
+                        echo '<div class="alert alert-danger">' . $_SESSION['login_error'] . '</div>';
+                        unset($_SESSION['login_error']); // Eliminar el mensaje después de mostrarlo
+                    }
+                    ?>
+                    
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label for="exampleInputEmail1">Dirección email</label>
@@ -56,6 +67,9 @@ include 'includes/templates/head.php';  // Asegúrate de que head.php tenga los 
                     </div>
                 </form>
             </div>
+
+
+
         </div>
     </div>
     <!-- login area end -->

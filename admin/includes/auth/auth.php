@@ -33,6 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar la contraseña con password_verify()
         if (password_verify($password, $hashed_password)) {
 
+            // Verificar que el usuario tenga el rol "admin"
+            if ($rol !== 'admin') {
+                // Si el rol no es admin, redirigir a la página de login con un error
+                $_SESSION['login_error'] = "No tienes permisos de administrador.";
+                header("Location: ../../login.php");
+                exit();
+            }
+
+            // Regenerar el ID de sesión para prevenir ataques de fijación de sesión
+            session_regenerate_id(true);  // Genera un nuevo ID de sesión y destruye el viejo
+
             // Actualizar last_conection y ip_conection
             $last_conection = date('Y-m-d H:i:s');  // Fecha y hora actual
             $ip_conection = $_SERVER['REMOTE_ADDR']; // IP del cliente
@@ -48,22 +59,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_name'] = $name;
             $_SESSION['user_role'] = $rol;
 
-            // Redirigir al dashboard si es admin
-            if ($rol === 'admin') {
-                header("Location: ../../dashboard.php");
-                exit();
-            } else {
-                header("Location: ../index.php?error=" . urlencode("No tienes permisos de administrador."));
-                exit();
-            }
+            // Redirigir al dashboard de admin
+            header("Location: ../../dashboard.php");
+            exit();
+
         } else {
             // Contraseña incorrecta
-            header("Location: ../login.php?error=" . urlencode("Contraseña incorrecta."));
+            $_SESSION['login_error'] = "Contraseña incorrecta.";
+            header("Location: ../../login.php");
             exit();
         }
     } else {
         // Usuario no encontrado
-        header("Location: ../login.php?error=" . urlencode("Usuario no encontrado."));
+        $_SESSION['login_error'] = "Usuario no encontrado.";
+        header("Location: ../../login.php");
         exit();
     }
 

@@ -1,4 +1,5 @@
 <?php
+include '../includes/auth/checklogin.php';
 include '../includes/templates/head.php';
 include '../includes/functions/emojis.php';
 
