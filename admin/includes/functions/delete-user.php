@@ -1,6 +1,6 @@
 <?php
 // Incluir la configuración de la base de datos
-include '../auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 include_once '../../../config.php';
 
 

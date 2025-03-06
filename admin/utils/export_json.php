@@ -1,6 +1,6 @@
 <?php
 // Asegúrate de usar include_once para evitar duplicados
-include '../includes/auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 
 include_once '../../config.php';  // Incluir config.php una sola vez
 include_once '../includes/functions/export-json.php';  // Incluir el archivo de funciones

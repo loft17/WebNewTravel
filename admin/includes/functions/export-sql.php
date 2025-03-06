@@ -1,5 +1,5 @@
 <?php
-include '../auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 
 // Función para exportar a SQL
 function exportar_a_sql($conn) {

@@ -1,5 +1,5 @@
 <?php
-include '../auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 
 // Incluir el archivo de configuración para acceder a las constantes
 include_once '../../config.php';

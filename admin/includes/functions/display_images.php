@@ -1,4 +1,6 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
+
 // Función para mostrar las imágenes
 function displayImages($images) {
     $baseUrl = "http://" . $_SERVER['HTTP_HOST']; // Obtener la URL base con http://

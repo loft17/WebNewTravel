@@ -1,5 +1,5 @@
 <?php
-include '../auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 
 function obtener_usuario($user_id) {
     // Conectar a la base de datos

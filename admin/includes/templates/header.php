@@ -1,5 +1,5 @@
 <?php
-include '../includes/auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 ?>
 
 <!-- header area start -->

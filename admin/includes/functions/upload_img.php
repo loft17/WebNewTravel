@@ -1,4 +1,6 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
+
 function procesarSubidaImagen($file) {
     // Definir la ruta donde se guardarán las imágenes, que será en una carpeta con la fecha actual
     $fecha = date("Y-m-d");

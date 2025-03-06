@@ -1,3 +1,8 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
+?>
+
+
 <!-- footer area start-->
 <footer>
     <div class="footer-area">

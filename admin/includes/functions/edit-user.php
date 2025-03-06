@@ -1,5 +1,5 @@
 <?php
-include '../auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 include_once '../../../config.php';  // Asegúrate de incluir la configuración de la base de datos
 
 // Verificar que el parámetro 'id' está presente en la URL
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        header("Location: ../../adm/users.php?message=Usuario%20actualizado%20correctamente.");
+        header("Location: ../../adm/show_users.php?message=Usuario%20actualizado%20correctamente.");
         exit();
     } else {
         echo "Error al actualizar el usuario.";

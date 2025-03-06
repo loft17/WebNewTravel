@@ -1,4 +1,5 @@
 <?php
+// Definir la ruta base de tu proyecto (ajusta según tu estructura de directorios)
 define('URL_WEB', 'http://192.168.0.118');
 
 define('DB_HOST', 'localhost');

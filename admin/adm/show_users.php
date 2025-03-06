@@ -1,5 +1,5 @@
 <?php
-include '../includes/auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 include '../includes/templates/head.php';  // Asegúrate de que head.php tenga los elementos <head> y <meta> adecuados.
 ?>
 
@@ -20,7 +20,6 @@ include '../includes/templates/head.php';  // Asegúrate de que head.php tenga l
     <div class="page-container">
         <?php include '../includes/templates/sidebar.php'; ?>
         <?php include '../includes/templates/user-profile.php'; ?>
-
 
 
         <!-- main content area start -->

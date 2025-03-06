@@ -1,5 +1,6 @@
+
 <?php
-include '../includes/auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 ?>
 
 <!-- sidebar menu area start -->
@@ -35,7 +36,7 @@ include '../includes/auth/protect.php';
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
                             <span>Administración</span></a>
                         <ul class="collapse">
-                            <li><a href="/admin/adm/users.php">Usuarios</a></li>
+                            <li><a href="/admin/adm/show_users.php">Usuarios</a></li>
                             <li><a href="/admin/adm/portalconf.php">Portal</a></li>
                         </ul>
                     </li>

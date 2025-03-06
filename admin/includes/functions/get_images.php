@@ -1,4 +1,5 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 
 // Función recursiva para obtener imágenes
 function getImagesFromDirectory($dir) {

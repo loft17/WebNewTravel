@@ -1,5 +1,5 @@
 <?php
-include '../includes/auth/protect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 include '../includes/templates/head.php';  // Asegúrate de que head.php tenga los elementos <head> y <meta> adecuados.
 include '../includes/functions/upload_img.php';  // Incluir la función para subir imágenes
 
