@@ -24,6 +24,15 @@ include '../includes/auth/protect.php';
 
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
+                            <span>Ficheros</span></a>
+                        <ul class="collapse">
+                            <li><a href="/admin/files/show_imgs.php">Imagenes</a></li>
+                            <li><a href="/admin/files/upload_imgs.php">Subir</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
                             <span>Administración</span></a>
                         <ul class="collapse">
                             <li><a href="/admin/adm/users.php">Usuarios</a></li>
