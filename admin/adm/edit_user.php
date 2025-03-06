@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Editar Usuario</h4>
-                                <form method="POST" action="../includes/functions/edit-user.php?id=<?php echo $user['id']; ?>">
+                                <form method="POST" action="../includes/functions/edit-user.php?id=<?php echo $user['id']; ?>" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label for="name">Nombre</label>
                                         <input type="text" class="form-control" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
@@ -79,8 +79,18 @@ if (isset($_GET['id'])) {
                                         <label class="form-check-label" for="active">Activo</label>
                                     </div>
 
+                                    <!-- Campo para subir la imagen -->
+                                    <div class="form-group">
+                                        <label for="image_profile">Imagen de Perfil</label>
+                                        <input type="file" class="form-control" name="image_profile" id="image_profile" accept="image/*">
+                                        <?php if ($user['image_profile']) : ?>
+                                            <br><img src="../../content/uploads/<?php echo $user['image_profile']; ?>" alt="Imagen de perfil" width="100">
+                                        <?php endif; ?>
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary mt-4">Guardar cambios</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
