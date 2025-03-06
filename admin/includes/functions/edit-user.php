@@ -1,4 +1,5 @@
 <?php
+include '../auth/protect.php';
 include_once '../../../config.php';  // Asegúrate de incluir la configuración de la base de datos
 
 // Verificar que el parámetro 'id' está presente en la URL

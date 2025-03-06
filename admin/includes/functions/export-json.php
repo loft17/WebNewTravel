@@ -1,5 +1,5 @@
 <?php
-
+include '../auth/protect.php';
 
 // Llamar a la función para conectar a la base de datos
 $conn = conectar_bd();  // Obtener la conexión a la base de datos

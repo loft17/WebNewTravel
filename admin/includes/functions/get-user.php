@@ -1,4 +1,6 @@
 <?php
+include '../auth/protect.php';
+
 function obtener_usuario($user_id) {
     // Conectar a la base de datos
     $conn = conectar_bd();

@@ -1,4 +1,5 @@
 <?php
+include '../includes/auth/protect.php';
 // Incluir la configuración de la base de datos y las funciones necesarias
 include_once '../../config.php';
 include '../includes/templates/head.php'; 

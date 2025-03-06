@@ -1,5 +1,5 @@
 <?php
-include '../includes/auth/checklogin.php';
+include '../includes/auth/protect.php';
 include '../includes/templates/head.php';
 include '../includes/functions/emojis.php';
 

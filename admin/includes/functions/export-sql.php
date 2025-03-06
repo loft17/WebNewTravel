@@ -1,4 +1,6 @@
 <?php
+include '../auth/protect.php';
+
 // Función para exportar a SQL
 function exportar_a_sql($conn) {
     // Crear una variable para almacenar el contenido SQL

@@ -1,3 +1,7 @@
+<?php
+include '../includes/auth/protect.php';
+?>
+
 <!-- header area start -->
 <div class="header-area">
     <div class="row align-items-center">

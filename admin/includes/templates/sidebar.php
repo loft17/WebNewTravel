@@ -1,3 +1,6 @@
+<?php
+include '../includes/auth/protect.php';
+?>
 
 <!-- sidebar menu area start -->
 <div class="sidebar-menu">

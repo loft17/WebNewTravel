@@ -1,4 +1,6 @@
 <?php
+include '../auth/protect.php';
+
 // Incluir el archivo de configuración para acceder a las constantes
 include_once '../../config.php';
 

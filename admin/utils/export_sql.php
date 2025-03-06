@@ -1,4 +1,5 @@
 <?php
+include '../includes/auth/protect.php';
 include_once '../../config.php';  // Incluir la conexión a la base de datos
 include_once '../includes/functions/export-sql.php';  // Incluir las funciones de exportación
 include '../includes/templates/head.php';

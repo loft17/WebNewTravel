@@ -1,3 +1,7 @@
+<?php
+include '../includes/auth/protect.php';
+?>
+
 <!-- page title area start -->
 <div class="page-title-area">
     <div class="row align-items-center">

@@ -1,4 +1,6 @@
 <?php
+include '../auth/protect.php';
+
 function obtenerCategoriasEmojis($jsonFile) {
     $categorias = [];
 

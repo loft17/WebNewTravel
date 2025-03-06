@@ -1,4 +1,6 @@
 <?php
+include '../auth/protect.php';
+
 // Inicia la sesión si no está ya iniciada
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -8,6 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));  // Genera un token CSRF aleatorio y lo guarda en la sesión
 }
+
 ?>
 
 
