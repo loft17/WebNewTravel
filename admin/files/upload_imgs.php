@@ -40,16 +40,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
                                 <div class="header-title">Subir imagen</div>
                                 <!-- Formulario para subir imagen -->
                                 <form action="upload_imgs.php" method="post" enctype="multipart/form-data">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Upload</span>
-                                        </div>
+                                    <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" name="image" class="custom-file-input" id="image">
-                                            <label class="custom-file-label" for="image">Choose file</label>
+                                            <input type="file" name="image" class="custom-file-input" id="image" onchange="previewImage(event)">
+                                            <label class="custom-file-label" for="image">Seleccionar imagen</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="submit">SUBIR</button>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Subir imagen</button>
+
+                                    <!-- Contenedor para mostrar la miniatura -->
+                                    <div id="imagePreviewContainer" style="display:none; margin-top: 15px;">
+                                        <p><strong>Vista previa:</strong></p>
+                                        <img id="imagePreview" src="" alt="Image Preview" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
@@ -68,5 +74,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
     <?php include '../includes/templates/footer.php'; ?>
     <?php include '../includes/libraries/scripts.php'; ?>
 
+    <!-- JavaScript para la vista previa de la imagen -->
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const imagePreview = document.getElementById('imagePreview');
+                const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+
+                // Establecer la fuente de la imagen
+                imagePreview.src = e.target.result;
+
+                // Hacer visible el contenedor de la vista previa
+                imagePreviewContainer.style.display = 'block';
+            }
+
+            // Leer la imagen seleccionada
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 </html>
