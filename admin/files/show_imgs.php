@@ -2,6 +2,7 @@
 include '../includes/auth/protect.php';
 include '../includes/templates/head.php';  // Asegúrate de que head.php tenga los elementos <head> y <meta> adecuados.
 include '../includes/functions/get_images.php'; // Incluir el archivo para obtener las imágenes
+include '../includes/functions/display_images.php'; // Incluir el archivo que contiene la función displayImages
 
 // Obtener las imágenes
 $images = getImagesFromDirectory($_SERVER['DOCUMENT_ROOT'] . '/content/uploads/');
@@ -32,7 +33,7 @@ $images = getImagesFromDirectory($_SERVER['DOCUMENT_ROOT'] . '/content/uploads/'
                             <div class="card-body">
                                 <div class="header-title">Imagenes</div>
 
-                                <?php displayImages($images); ?>
+                                <?php displayImages($images); ?> <!-- Llamada a la función displayImages -->
 
                             </div>
                         </div>
@@ -50,18 +51,3 @@ $images = getImagesFromDirectory($_SERVER['DOCUMENT_ROOT'] . '/content/uploads/'
 </body>
 
 </html>
-
-<?php
-// Función para mostrar las imágenes
-function displayImages($images) {
-    echo '<div style="display: flex; flex-wrap: wrap;">';
-    foreach ($images as $image) {
-        $relativePath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $image); // Ruta relativa a la carpeta web
-        echo '<div style="margin: 10px; width: 200px; text-align: center;">';
-        echo '<img src="' . $relativePath . '" alt="Image" style="width: 100%; max-width: 180px; height: auto;"/>';
-        echo '<p>' . basename($image) . '</p>';
-        echo '</div>';
-    }
-    echo '</div>';
-}
-?>

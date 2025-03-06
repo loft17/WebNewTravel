@@ -35,4 +35,7 @@ if (empty($_SESSION['csrf_token'])) {
     <link rel="stylesheet" href="/admin/assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="/admin/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- FONT-AWESONME -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
