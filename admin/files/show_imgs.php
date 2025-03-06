@@ -37,9 +37,12 @@ $images = getImagesFromDirectory($_SERVER['DOCUMENT_ROOT'] . '/content/uploads/'
 
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
+
             </div>
+            <!-- Notificación de copiado -->
+            <div id="copyNotification" style="display: none;" class="alert"></div>
         </div>
         <!-- main content area end -->
 
@@ -48,6 +51,7 @@ $images = getImagesFromDirectory($_SERVER['DOCUMENT_ROOT'] . '/content/uploads/'
 
     <?php include '../includes/templates/footer.php'; ?>
     <?php include '../includes/libraries/scripts.php'; ?>
+    <script src="../assets/js/copy_images.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,3 @@
-<?php
-include '../auth/protect.php';
-?>
-
 <!-- footer area start-->
 <footer>
     <div class="footer-area">

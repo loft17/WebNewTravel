@@ -1,11 +1,15 @@
 <?php
 // Función para mostrar las imágenes
 function displayImages($images) {
+    $baseUrl = "http://" . $_SERVER['HTTP_HOST']; // Obtener la URL base con http://
+
     echo '<div style="display: flex; flex-wrap: wrap;">';
     foreach ($images as $image) {
         $relativePath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $image); // Ruta relativa a la carpeta web
+        $imageUrl = $baseUrl . $relativePath; // Crear la URL completa con el dominio
+
         echo '<div style="margin: 10px; width: 200px; text-align: center; position: relative;">'; // Añadir position: relative al contenedor
-        echo '<img src="' . $relativePath . '" alt="Image" style="width: 100%; max-width: 180px; height: auto;"/>';
+        echo '<img src="' . $imageUrl . '" alt="Image" style="width: 100%; max-width: 180px; height: auto;" onclick="copyImageUrl(\'' . $imageUrl . '\');"/>';
         echo '<p>' . basename($image) . '</p>';
         
         // Agregar el botón de papelera en la esquina superior derecha con recuadro blanco y 75% de transparencia
@@ -17,5 +21,8 @@ function displayImages($images) {
         echo '</div>';
     }
     echo '</div>';
+
+    // Incluir el script JavaScript externo
+
 }
 ?>

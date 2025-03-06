@@ -1,5 +1,4 @@
 <?php
-include '../auth/protect.php';
 
 // Función recursiva para obtener imágenes
 function getImagesFromDirectory($dir) {

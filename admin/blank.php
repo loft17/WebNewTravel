@@ -36,7 +36,8 @@ include 'includes/templates/head.php';  // Asegúrate de que head.php tenga los 
                         
                     </div>
                 </div>
-                
+                <!-- Notificación de copiado -->
+                <div id="copyNotification" style="display: none;" class="alert"></div>
             </div>
             <!-- main content area end -->
 
