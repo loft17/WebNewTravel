@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Editar Usuario</h4>
-                                <form method="POST" action="../includes/functions/edit-user.php?id=<?php echo $user['id']; ?>" enctype="multipart/form-data">
+                                <form method="POST" action="../includes/functions/edit-user.php?id=<?php echo $user['id']; ?>">
                                     <div class="form-group">
                                         <label for="name">Nombre</label>
                                         <input type="text" class="form-control" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
@@ -74,23 +74,23 @@ if (isset($_GET['id'])) {
                                         <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese nueva contraseña">
                                     </div>
 
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                    </div>
+
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" name="active" id="active" <?php echo ($user['active'] == 1) ? 'checked' : ''; ?>>
                                         <label class="form-check-label" for="active">Activo</label>
                                     </div>
 
-                                    <!-- Campo para subir la imagen -->
-                                    <div class="form-group">
-                                        <label for="image_profile">Imagen de Perfil</label>
-                                        <input type="file" class="form-control" name="image_profile" id="image_profile" accept="image/*">
-                                        <?php if ($user['image_profile']) : ?>
-                                            <br><img src="../../content/uploads/<?php echo $user['image_profile']; ?>" alt="Imagen de perfil" width="100">
-                                        <?php endif; ?>
-                                    </div>
-
                                     <button type="submit" class="btn btn-primary mt-4">Guardar cambios</button>
                                 </form>
-
                             </div>
                         </div>
                     </div>

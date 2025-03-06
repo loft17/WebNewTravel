@@ -40,9 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
                                 <div class="header-title">Subir imagen</div>
                                 <!-- Formulario para subir imagen -->
                                 <form action="upload_imgs.php" method="post" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label for="image">Selecciona una imagen</label>
-                                        <input type="file" name="image" id="image" class="form-control">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input" id="image">
+                                            <label class="custom-file-label" for="image">Choose file</label>
+                                        </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Subir imagen</button>
                                 </form>
