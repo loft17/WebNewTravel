@@ -4,6 +4,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/admin/includes/auth/protect.php';
 include_once '../../config.php';
 include '../includes/templates/head.php'; 
 include '../includes/functions/get-user.php'; // Incluir el archivo con la lógica para obtener el usuario
+include '../includes/functions/upload_img.php';  // Incluir la función para subir imágenes
+
 
 // Verificar que el parámetro 'id' está presente en la URL
 if (isset($_GET['id'])) {
@@ -74,16 +76,6 @@ if (isset($_GET['id'])) {
                                         <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese nueva contraseña">
                                     </div>
 
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Upload</span>
-                                        </div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                        </div>
-                                    </div>
-
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" name="active" id="active" <?php echo ($user['active'] == 1) ? 'checked' : ''; ?>>
                                         <label class="form-check-label" for="active">Activo</label>
@@ -104,6 +96,8 @@ if (isset($_GET['id'])) {
 
     <?php include '../includes/templates/footer.php'; ?>
     <?php include '../includes/libraries/scripts.php'; ?>
+    <!-- JavaScript para la vista previa de la imagen -->
+    <script src="../assets/js/previewImage.js"></script>
 
 </body>
 </html>

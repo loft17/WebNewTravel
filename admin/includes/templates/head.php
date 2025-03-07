@@ -1,6 +1,4 @@
 <?php
-
-
 // Inicia la sesión si no está ya iniciada
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -10,7 +8,6 @@ if (session_status() == PHP_SESSION_NONE) {
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));  // Genera un token CSRF aleatorio y lo guarda en la sesión
 }
-
 ?>
 
 
@@ -37,5 +34,4 @@ if (empty($_SESSION['csrf_token'])) {
     <script src="/admin/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- FONT-AWESONME -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
 </head>
